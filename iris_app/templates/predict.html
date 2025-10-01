@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iris Flower Prediction</title>
+</head>
+<body>
+    <h1>Iris Flower Prediction 🌸</h1>
+
+    <!-- User input form -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Display prediction if available -->
+    {% if prediction %}
+        <h2>Predicted Species: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
